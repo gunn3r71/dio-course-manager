@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+#courseImage {
+    width: 50px;
+    height: auto;
+    border: 50%;
+}
