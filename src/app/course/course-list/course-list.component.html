@@ -1,1 +1,25 @@
-<h1>Minha lista de cursos</h1>
+<div>
+    <h2>Courses</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <td>Image</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Release At</td>
+            <td>Rating</td>
+            <td>Options</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses">
+                <td><img src="{{ course.imageUrl }}"/></td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.price }}</td>
+                <td>{{ course.code }}</td>
+                <td>{{ course.releaseDate }}</td>
+                <td>{{ course.rating }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
