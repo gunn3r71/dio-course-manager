@@ -5,6 +5,10 @@ import { Course } from "./course";
     providedIn: 'root'
 })
 export class CourseService {
+    GetById(id:number):Course|undefined {
+        return COURSES.find((course:Course) => course.id === id)
+    }
+
     GetAll():Course[] {
         return COURSES;
     }
