@@ -10,6 +10,7 @@ import { ReplacePipe } from './pipes/replace.pipe';
 import { StarComponent } from './star/star.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     StarComponent,
     ReplacePipe,
     NavbarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    CourseDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
       {
         path: 'courses',
         component: CourseListComponent
+      },
+      {
+        path: 'courses/details/:id',
+        component: CourseDetailsComponent
       },
       {
         path: '**',

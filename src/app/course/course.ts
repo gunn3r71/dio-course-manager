@@ -8,4 +8,5 @@ export class Course{
     rating: number;
     price: number;
     imageUrl: string;
+    status: boolean;
 }

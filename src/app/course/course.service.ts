@@ -6,15 +6,18 @@ import { Course } from "./course";
 })
 export class CourseService {
     GetById(id:number):Course|undefined {
-        return COURSES.find((course:Course) => course.id === id)
+        return COURSES.find((course:Course) => course.id === id);
     }
 
     GetAll():Course[] {
         return COURSES;
     }
 
-    InsertCourse(course: Course):void{
+    InsertCourse(course: Course):void {
         COURSES.push(course);
+    }
+
+    RemoveCourse(id: number):void {
     }
 }
 
@@ -29,6 +32,7 @@ var COURSES: Course[] = [
         rating: 3,
         price: 12.99,
         imageUrl: '/assets/images/cli.png',
+        status: true
     },
     {
         id: 2,
@@ -40,6 +44,7 @@ var COURSES: Course[] = [
         rating: 3.5,
         price: 24.99,
         imageUrl: '/assets/images/forms.png',
+        status: true
     },
     {
         id: 3,
@@ -51,6 +56,7 @@ var COURSES: Course[] = [
         rating: 4.0,
         price: 36.99,
         imageUrl: '/assets/images/http.png',
+        status: true
     },
     {
         id: 4,
@@ -62,6 +68,7 @@ var COURSES: Course[] = [
         rating: 4.5,
         price: 46.99,
         imageUrl: '/assets/images/router.png',
+        status: true
     },
     {
         id: 5,
@@ -73,9 +80,6 @@ var COURSES: Course[] = [
         rating: 5,
         price: 56.99,
         imageUrl: '/assets/images/animations.png',
+        status: true
     }
 ];
-
-function providedIn(providedIn: any, arg1: string) {
-    throw new Error("Function not implemented.");
-}

@@ -1,0 +1,26 @@
+<div class="row" id="courseDetails">
+    <div class="col col-md-6" id="courseImageCover">
+        <img [src]="course.imageUrl">
+    </div>
+
+    <div class="col col-md-6" id="courseInfo">
+        <h2 class="text-info">{{ course.name }}</h2>
+
+        <p class="text-left">
+            <strong>Description:</strong><br>
+           {{ course.description }} 
+        </p>
+    
+        <p><strong>Duration: </strong>{{ course.duration }}</p>
+
+        <p>
+            <strong>Release date: </strong>
+            {{ course.releaseDate | date: 'dd/MM/yyyy' }}
+        </p>
+
+        <p>
+            <strong>Rating: </strong>
+            <app-star [rating] = "course.rating"></app-star>
+        </p>
+    </div>
+</div>
