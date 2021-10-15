@@ -13,8 +13,11 @@ export class CourseService {
         return COURSES;
     }
 
-    InsertCourse(course: Course):void {
-        COURSES.push(course);
+    Save(course: Course):void {
+        if(course.id){
+            const index = COURSES.findIndex((courseIterator:Course) => courseIterator.id === course.id);
+            COURSES[index] = course;
+        }
     }
 
     RemoveCourse(id: number):void {
