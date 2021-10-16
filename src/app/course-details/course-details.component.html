@@ -2,7 +2,7 @@
 
 <hr/>
 
-<form #courseForm="ngForm">
+<form #courseForm="ngForm" *ngIf="course">
     <div class="form-group row" style="display: none;">
         <label for="" class="col-sm-2 col-from-label">Image</label>   
         <div class="col-sm-10">
@@ -95,3 +95,8 @@
         <button [disabled]="courseForm.invalid" (click)="save(courseForm.value)" class="btn btn-success btn-md">Save</button>
     </div>
 </form>
+
+<div class="d-grid gap-2" *ngIf="!course">
+    <h1 class="text-danger">Course not found =(</h1>
+    <button [routerLink]="['/courses']" class="btn btn-secondary" type="button">Back</button>
+</div>

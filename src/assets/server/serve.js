@@ -14,7 +14,7 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.listen(3100, () => {
-  console.log('Server Started!');
+  console.log(`Server started at http://localhost:3100`);
 });
 
 app.route('/api/courses').get((request, response) => {

@@ -14,13 +14,21 @@ export class CourseDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private courseService: CourseService) { }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('id');
-    let parsedId = (id != null) ? parseInt(id) : 0;
-    this.course = this.courseService.GetById(parsedId) ?? new Course();
+    this.courseService.GetById(parseInt(this.route.snapshot.paramMap.get('id') ?? "0")).subscribe({
+      next: course => this.course = course,
+      error: err => {
+        console.log("Error: ", err);
+      }
+    });
   }
 
   save(course: Course): void{
-      this.courseService.Save(course);
+      this.courseService.Save(course).subscribe({
+        next: course => console.log("success",course),
+        error: err => {
+          console.log("Error: ", err)
+        }
+      });
   }
 
 }

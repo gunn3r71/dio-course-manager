@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule }  from '@angular/common/http' 
+
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { ReplacePipe } from './pipes/replace.pipe';
@@ -26,6 +27,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',

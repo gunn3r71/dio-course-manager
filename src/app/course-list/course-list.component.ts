@@ -17,8 +17,20 @@ export class CourseListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._courses = this.courseService.GetAll();
-    this.filteredCourses = this.courseService.GetAll();
+    this.GetAll();
+  }
+
+  GetAll():void {
+    this.courseService.GetAll().subscribe({
+      next: courses => {
+        this._courses = courses;
+        this.filteredCourses = this._courses;
+      },
+      error: err => {
+        console.log("Error: " + err);
+      }
+
+    });
   }
 
   set filter(value:string){
