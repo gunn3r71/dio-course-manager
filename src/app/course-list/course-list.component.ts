@@ -33,6 +33,20 @@ export class CourseListComponent implements OnInit {
     });
   }
 
+  RemoveCourseById(id:number):any {
+    this.courseService.RemoveCourseById(id).subscribe(
+    {
+      next: () => {
+        console.log(`Course ${id} deleted with success`);
+        this.GetAll()
+      },
+      error: err => {
+        console.log("Error: ", err)
+      }
+    }
+    );
+  }
+
   set filter(value:string){
     this._filterBy = value;
     this.filteredCourses = this._courses.filter((course: Course) => course.name.toLowerCase().indexOf(this._filterBy.toLowerCase()) > -1)
