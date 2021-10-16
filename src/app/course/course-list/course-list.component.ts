@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Course } from '../course/course';
-import { CourseService } from '../course/course.service';
+import { Component, OnInit } from "@angular/core";
+import { Course } from "../course";
+import { CourseService } from "../course.service";
 
 @Component({
   templateUrl: './course-list.component.html',
