@@ -11,7 +11,7 @@
 
 - Enter the src/assets/server directory.
 - run `npm install` to download project dependencies.
-- run `node serve.js` to boot the backend. 
+- run `node server.js` to boot the backend. 
 
 ## Run application on your local machine 
 
